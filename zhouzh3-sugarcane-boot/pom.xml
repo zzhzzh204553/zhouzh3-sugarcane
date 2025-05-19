@@ -35,6 +35,12 @@
             <artifactId>spring-boot-starter</artifactId>
         </dependency>
 
+        <!--在Spring Cloud 2023.0.1（即Spring Cloud 2023.0.x版本）中，Feign默认不再集成Ribbon，而是使用Spring Cloud LoadBalancer作为负载均衡器。-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-loadbalancer</artifactId>
+        </dependency>
+
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>

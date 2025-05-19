@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import static com.zhouzh3.sugarcane.api.bean.Constant.SCOUT_SERVICE;
 
 
-@FeignClient(name = SCOUT_SERVICE, url = "http://localhost:8761/")
+@FeignClient(name = SCOUT_SERVICE)
 public interface FeignApi {
 
     String PATH = "/api/scout";
