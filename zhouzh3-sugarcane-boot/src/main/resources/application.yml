@@ -15,6 +15,9 @@ feign:
                 load-balancer:
                     enabled: true
 
+zhouzh3-sugarcane:
+    ribbon:
+        NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RoundRobinRule  # 轮询策略
 
 eureka:
     client:
