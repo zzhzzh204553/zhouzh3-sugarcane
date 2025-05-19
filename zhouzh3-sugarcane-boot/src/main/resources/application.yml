@@ -11,14 +11,12 @@ spring:
         loadbalancer:
             configurations: round-robin
 
-feign:
-    client:
-        config:
-            default:
-                load-balancer:
-                    enabled: true
-
-
+#feign:
+#    client:
+#        config:
+#            default:
+#                load-balancer:
+#                    enabled: true
 
 eureka:
     client:
