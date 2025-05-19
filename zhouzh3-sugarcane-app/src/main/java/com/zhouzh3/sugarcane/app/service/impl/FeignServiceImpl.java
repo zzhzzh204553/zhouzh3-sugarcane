@@ -18,6 +18,8 @@ public class FeignServiceImpl implements FeignService {
     @Override
     public R<String> hello() {
         log.info("================hello");
-        return scoutApi.hello();
+        R<String> result = scoutApi.hello();
+        System.out.println("================hello"+ result);
+        return result;
     }
 }
