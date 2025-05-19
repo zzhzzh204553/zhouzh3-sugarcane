@@ -1,0 +1,35 @@
+custom:
+    message: "-> eureka"
+
+
+server:
+    port: 8081
+
+spring:
+    application:
+        name: zhouzh3-sugarcane
+
+eureka:
+    client:
+        service-url:
+            defaultZone: http://localhost:8761/eureka/
+        registry-fetch-interval-seconds: 30   # 默认是30秒
+    instance:
+        prefer-ip-address: true
+        lease-renewal-interval-in-seconds: 10  # 续约频率
+        lease-expiration-duration-in-seconds: 60  # 过期时间
+
+
+management:
+    endpoints:
+        web:
+            exposure:
+                include: health,info
+    health:
+        status:
+            http-mapping:
+                DOWN: 503
+                UP: 200
+    endpoint:
+        health:
+            show-details: always

@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.zhouzh3</groupId>
+    <artifactId>zhouzh3-sugarcane</artifactId>
+    <!-- 使用固定版本号 -->
+    <version>1.0.0-SNAPSHOT</version>
+    <name>zhouzh3-sugarcane</name>
+    <!-- 定义子模块 -->
+    <modules>
+
+        <module>zhouzh3-sugarcane-boot</module>
+        <module>zhouzh3-sugarcane-app</module>
+        <module>zhouzh3-sugarcane-api</module>
+    </modules>
+    <packaging>pom</packaging> <!-- 关键：父工程打包方式为 pom -->
+
+    <!-- 子项目继承此版本 -->
+    <properties>
+
+
+        <os-maven-plugin.version>1.7.1</os-maven-plugin.version>
+
+        <bcprov.jdk18on.version>1.78</bcprov.jdk18on.version>
+        <commons.io.version>2.14.0</commons.io.version>
+        <gmavenplus.version>4.1.1</gmavenplus.version>
+        <groovy.version>4.0.20</groovy.version>
+        <hutool.version>5.8.36</hutool.version>
+        <java.version>17</java.version>
+        <lombok.version>1.18.36</lombok.version>
+        <mapstruct.version>1.5.5.Final</mapstruct.version>
+
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+
+        <maven.compiler.plugin.version>3.11.0</maven.compiler.plugin.version>
+        <maven.resources.plugin.version>3.3.1</maven.resources.plugin.version>
+        <spring.boot.maven.plugin.version>3.3.9</spring.boot.maven.plugin.version>
+
+        <maven.version>4.0.0</maven.version>
+
+        <mysql.version>8.4.0</mysql.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <protobuf.version>4.28.2</protobuf.version>
+        <revision>1.0.0</revision>
+        <xmlunit.core.version>2.10.0</xmlunit.core.version>
+        <tomcat.embed.core.version>11.0.5</tomcat.embed.core.version>
+        <changelist>SNAPSHOT</changelist>
+        <jwt.version>0.12.6</jwt.version>
+        <seata.version>2.3.0</seata.version>
+
+        <tracing.version>1.4.5</tracing.version>
+        <opentelemetry.version>1.49.0</opentelemetry.version>
+        <shardingsphere.version>5.5.2</shardingsphere.version>
+        <testng.version>7.11.0</testng.version>
+        <!--
+                <spring-boot.version>3.2.4</spring-boot.version>
+                <spring.cloud.alibaba.version>2023.0.1.0</spring.cloud.alibaba.version>
+                <spring.cloud.version>2023.0.1</spring.cloud.version>
+                -->
+
+        <!--
+       	Spring Boot 3.3.10
+        Spring Cloud 2023.0.5
+        Spring Cloud Alibaba 2023.0.3.2
+        nacos 2.5.0
+
+        sentinel 1.8.8
+        seata 2.3.0
+
+
+        -->
+        <!--        spring-boot2023.0.x aka Leyton	对应spring.cloud3.3.x, 3.2.x-->
+        <spring-boot.version>3.3.10</spring-boot.version>
+        <spring.cloud.version>2023.0.5</spring.cloud.version>
+        <spring.cloud.alibaba.version>2023.0.3.2</spring.cloud.alibaba.version>
+        <sentinel.version>1.8.8</sentinel.version>
+        <mybatis.spring.version>3.0.4</mybatis.spring.version>
+        <mybatis.plus.jsqlparser.version>3.5.11</mybatis.plus.jsqlparser.version>
+        <mybatis.plus.boot.starter.version>3.5.11</mybatis.plus.boot.starter.version>
+
+        <redisson.version>3.45.1</redisson.version>
+        <caffeine.version>3.2.0</caffeine.version>
+        <fastjson2.version>2.0.57</fastjson2.version>
+        <okio.jvm.version>3.10.2</okio.jvm.version>
+        <error.prone.annotations.version>2.37.0</error.prone.annotations.version>
+
+        <grpc-spring-boot-starter.version>3.1.0.RELEASE</grpc-spring-boot-starter.version>
+        <protobuf.java.version>4.30.2</protobuf.java.version>
+
+        <protobuf.version>3.23.4</protobuf.version>
+        <protobuf-plugin.version>0.6.1</protobuf-plugin.version>
+        <grpc.version>1.58.0</grpc.version>
+
+        <eureka.version>4.2.1</eureka.version>
+        <eureka.client.jersey3.version>2.0.4</eureka.client.jersey3.version>
+    </properties>
+
+
+    <!-- 公共依赖 -->
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.zhouzh3</groupId>
+                <artifactId>zhouzh3-sugarcane-boot</artifactId>
+                <version>1.0.0-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>com.zhouzh3</groupId>
+                <artifactId>zhouzh3-sugarcane-app</artifactId>
+                <version>1.0.0-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>com.zhouzh3</groupId>
+                <artifactId>zhouzh3-sugarcane-api</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.zhouzh3</groupId>
+                <artifactId>zhouzh3-bamboo-infra</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.zhouzh3</groupId>
+                <artifactId>zhouzh3-common</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+
+            <!--=========================================================-->
+            <!-- Spring Boot 版本管理 -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- Spring Cloud 版本管理 -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring.cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- Spring Cloud Alibaba 版本管理 -->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring.cloud.alibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!--解决spring-cloud-starter-openfeign的告警-->
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>${commons.io.version}</version>
+                <!--                <type>pom</type>-->
+                <!--                <scope>import</scope>-->
+            </dependency>
+            <!--=========================================================-->
+            <!-- MapStruct -->
+            <dependency>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct</artifactId>
+                <version>${mapstruct.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct-processor</artifactId>
+                <version>${mapstruct.version}</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <!-- lombok -->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <scope>provided</scope>
+                <version>${lombok.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-core</artifactId>
+                <version>${hutool.version}</version>
+            </dependency>
+
+
+            <!-- MyBatis-Plus 依赖管理 -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis.plus.boot.starter.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.mybatis</groupId>
+                        <artifactId>mybatis-spring</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>org.mybatis</groupId>
+                <artifactId>mybatis-spring</artifactId>
+                <version>${mybatis.spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-jsqlparser</artifactId>
+                <version>${mybatis.plus.jsqlparser.version}</version>
+            </dependency>
+
+            <!-- MySQL 依赖 -->
+            <dependency>
+                <groupId>com.mysql</groupId>
+                <artifactId>mysql-connector-j</artifactId>
+                <version>${mysql.version}</version>
+            </dependency>
+            <!--解决mysql链接告警-->
+            <dependency>
+                <groupId>com.google.protobuf</groupId>
+                <artifactId>protobuf-java</artifactId>
+                <version>${protobuf.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- 分布式锁 -->
+            <dependency>
+                <groupId>org.redisson</groupId>
+                <artifactId>redisson-spring-boot-starter</artifactId>
+                <version>${redisson.version}</version>
+            </dependency>
+
+            <!--            jwt相关的jar包-->
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt-api</artifactId>
+                <version>${jwt.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt-impl</artifactId>
+                <version>${jwt.version}</version>
+                <scope>runtime</scope>
+            </dependency>
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt-jackson</artifactId>
+                <version>${jwt.version}</version>
+                <scope>runtime</scope>
+            </dependency>
+
+            <!--Caffeine 缓存-->
+            <dependency>
+                <groupId>com.github.ben-manes.caffeine</groupId>
+                <artifactId>caffeine</artifactId>
+                <version>${caffeine.version}</version>
+            </dependency>
+
+            <!--rocketmq 依赖冲突-->
+            <dependency>
+                <groupId>com.alibaba.fastjson2</groupId>
+                <artifactId>fastjson2</artifactId>
+                <version>${fastjson2.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.squareup.okio</groupId>
+                <artifactId>okio-jvm</artifactId>
+                <version>${okio.jvm.version}</version>
+                <scope>runtime</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.google.errorprone</groupId>
+                <artifactId>error_prone_annotations</artifactId>
+                <version>${error.prone.annotations.version}</version>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.xmlunit</groupId>
+                <artifactId>xmlunit-core</artifactId>
+                <version>${xmlunit.core.version}</version>
+            </dependency>
+
+            <!--            更适配最新的 Spring Boot 和 Spring Cloud 环境-->
+            <dependency>
+                <groupId>io.micrometer</groupId>
+                <artifactId>micrometer-tracing</artifactId>
+                <version>${tracing.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.micrometer</groupId>
+                <artifactId>micrometer-tracing-bridge-brave</artifactId>
+                <version>${tracing.version}</version>
+            </dependency>
+            <!--            可以直接将追踪数据发送到 Zipkin 后端，与 Micrometer 集成良好。-->
+            <dependency>
+                <groupId>io.opentelemetry</groupId>
+                <artifactId>opentelemetry-exporter-zipkin</artifactId>
+                <version>${opentelemetry.version}</version>
+            </dependency>
+
+
+            <!--            <dependency>-->
+            <!--                <groupId>org.apache.tomcat.embed</groupId>-->
+            <!--                <artifactId>tomcat-embed-core</artifactId>-->
+            <!--                <version>${tomcat.embed.core.version}</version>-->
+            <!--            </dependency>-->
+
+            <!--            直接使用spring-cloud-starter-alibaba-seata-->
+            <dependency>
+                <groupId>org.apache.seata</groupId>
+                <artifactId>seata-spring-boot-starter</artifactId>
+                <version>${seata.version}</version>
+            </dependency>
+
+            <!-- 如果需要 Spring Boot 集成（手动管理版本） -->
+            <dependency>
+                <groupId>org.apache.shardingsphere</groupId>
+                <artifactId>shardingsphere-jdbc</artifactId>
+                <version>${shardingsphere.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.testng</groupId>
+                <artifactId>testng</artifactId>
+                <version>${testng.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>net.devh</groupId>
+                <artifactId>grpc-spring-boot-starter</artifactId>
+                <version>${grpc-spring-boot-starter.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.protobuf</groupId>
+                <artifactId>protobuf-java</artifactId>
+                <version>${protobuf.java.version}</version>
+            </dependency>
+            <!-- 1.3.5 Java 9+ compatibility - Do NOT update to 2.0.0 -->
+            <!--            <dependency>-->
+            <!--                <groupId>jakarta.annotation</groupId>-->
+            <!--                <artifactId>jakarta.annotation-api</artifactId>-->
+            <!--                <version>1.3.5</version>-->
+            <!--            </dependency>-->
+
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+                <version>${eureka.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+                <version>${eureka.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.netflix.eureka</groupId>
+                <artifactId>eureka-client-jersey3</artifactId>
+                <version>${eureka.client.jersey3.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>${maven.compiler.plugin.version}</version>
+                    <configuration>
+                        <release>
+                            ${java.version}
+                        </release>
+                        <compilerArgs>
+                            <arg>-parameters</arg>
+                            <arg>-implicit:none</arg>
+                        </compilerArgs>
+                        <annotationProcessorPaths>
+                            <!-- mapstruct -->
+                            <path>
+                                <groupId>org.mapstruct</groupId>
+                                <artifactId>mapstruct-processor</artifactId>
+                                <version>${mapstruct.version}</version>
+                            </path>
+                            <!-- Lombok 注解处理器 -->
+                            <path>
+                                <groupId>org.projectlombok</groupId>
+                                <artifactId>lombok</artifactId>
+                                <version>${lombok.version}</version>
+                                <!--                                <scope>provided</scope>-->
+                            </path>
+                            <!-- Spring Boot 注解处理器 -->
+                            <path>
+                                <groupId>org.springframework.boot</groupId>
+                                <artifactId>spring-boot-configuration-processor</artifactId>
+                                <version>${spring-boot.version}</version>
+                            </path>
+                        </annotationProcessorPaths>
+                        <!--                        <compilerArgs>-->
+                        <!--                            <arg>-Amapstruct.defaultComponentModel=spring</arg>-->
+                        <!--                        </compilerArgs>-->
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-resources-plugin</artifactId>
+                    <version>${maven.resources.plugin.version}</version>
+                </plugin>
+
+
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <version>${spring.boot.maven.plugin.version}</version>
+                    <configuration>
+                        <skip>true</skip>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+
+
+    </build>
+</project>
