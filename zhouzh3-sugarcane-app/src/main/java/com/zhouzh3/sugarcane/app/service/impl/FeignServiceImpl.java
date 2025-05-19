@@ -5,6 +5,7 @@ import com.zhouzh3.sugarcane.api.feign.ScoutApi;
 import com.zhouzh3.sugarcane.app.service.FeignService;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 
@@ -12,7 +13,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class FeignServiceImpl implements FeignService {
 
-    @Resource
+    @Autowired
     private ScoutApi scoutApi;
 
     @Override
@@ -20,6 +21,4 @@ public class FeignServiceImpl implements FeignService {
         log.info("================hello");
         return scoutApi.hello();
     }
-
-
 }

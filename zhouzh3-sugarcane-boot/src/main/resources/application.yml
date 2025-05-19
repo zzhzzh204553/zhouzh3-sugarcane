@@ -8,6 +8,14 @@ spring:
     application:
         name: zhouzh3-sugarcane
 
+feign:
+    client:
+        config:
+            default:
+                load-balancer:
+                    enabled: true
+
+
 eureka:
     client:
         service-url:
