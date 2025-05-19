@@ -22,6 +22,10 @@
     <dependencies>
         <dependency>
             <groupId>com.zhouzh3</groupId>
+            <artifactId>zhouzh3-sugarcane-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.zhouzh3</groupId>
             <artifactId>zhouzh3-sugarcane-app</artifactId>
         </dependency>
 

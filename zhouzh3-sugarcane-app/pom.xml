@@ -32,6 +32,10 @@
         </dependency>
 
         <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+        <dependency>
             <groupId>com.zhouzh3</groupId>
             <artifactId>zhouzh3-common</artifactId>
         </dependency>

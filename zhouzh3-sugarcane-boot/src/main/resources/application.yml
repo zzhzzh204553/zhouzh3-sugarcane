@@ -1,11 +1,10 @@
-custom:
-    message: "-> eureka"
-
-
 server:
-    port: 8081
+    port: 8071
 
 spring:
+    config:
+        import:
+            - optional:classpath:application-local.yml
     application:
         name: zhouzh3-sugarcane
 
