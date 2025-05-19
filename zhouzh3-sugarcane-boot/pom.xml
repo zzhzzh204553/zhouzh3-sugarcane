@@ -44,6 +44,11 @@
             <artifactId>eureka-client-jersey3</artifactId>
         </dependency>
 
+        <!-- Feign基础依赖 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
 
         <!-- Actuator -->
         <dependency>
