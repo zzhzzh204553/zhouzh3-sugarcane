@@ -59,22 +59,25 @@
         </root>
     </springProfile>
 
-    <logger name="com.alibaba.csp.sentinel" level="DEBUG"/>
     <logger name="com.alibaba.nacos" level="INFO"/>
+    <logger name="org.springframework" level="INFO"/>
+
+
+
+    <logger name="com.alibaba.csp.sentinel" level="DEBUG"/>
     <logger name="com.baomidou" level="DEBUG"/>
     <logger name="com.github.benmanes.caffeine.cache" level="DEBUG"/>
     <logger name="org.apache.ibatis" level="DEBUG"/>
     <logger name="org.apache.rocketmq" level="DEBUG"/>
     <logger name="org.mybatis" level="DEBUG"/>
-    <logger name="org.mybatis" level="DEBUG"/>
-    <logger name="org.springframework" level="INFO"/>
+
     <logger name="org.springframework.cache" level="DEBUG"/>
     <logger name="org.springframework.cloud.loadbalancer" level="DEBUG"/>
     <logger name="org.springframework.cloud.openfeign" level="DEBUG"/>
     <logger name="org.springframework.cloud.stream.binder.rocketmq" level="DEBUG"/>
     <logger name="org.springframework.data.redis.cache" level="DEBUG"/>
 
-    <logger name="com.zhouzh3.sugarcane.api.feign" level="DEBUG"/>
+    <logger name="com.zhouzh3.sugarcane" level="DEBUG"/>
     <logger name="io.grpc.netty.shaded.io.netty.handler" level="DEBUG"/>
     <logger name="com.netflix.discovery" level="info"/>
 
