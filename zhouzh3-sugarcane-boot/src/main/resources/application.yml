@@ -26,10 +26,12 @@ spring:
 eureka:
     client:
         service-url:
-            defaultZone: http://localhost:8761/eureka/
+            defaultZone: http://host.docker.internal:8761/eureka/
         registry-fetch-interval-seconds: 30   # 默认是30秒
         register-with-eureka: true
         fetch-registry: true
+        healthcheck:
+          enabled: true
 
     instance:
         prefer-ip-address: true
