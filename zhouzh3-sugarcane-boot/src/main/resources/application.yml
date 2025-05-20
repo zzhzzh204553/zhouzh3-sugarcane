@@ -6,7 +6,7 @@ spring:
         import:
             - optional:classpath:application-local.yml
     application:
-        name: ZHOUZH3-SUGARCANE
+        name: zhouzh3-sugarcane
     profiles:
         active: dev
     main:

@@ -4,8 +4,10 @@ import com.zhouzh3.common.response.R;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import static com.zhouzh3.sugarcane.api.bean.Constant.SERVICE_NAME;
 
-@FeignClient(name = "ZHOUZH3-SUGARCANE")
+
+@FeignClient(name = SERVICE_NAME)
 public interface FeignApi {
 
     String PATH = "/api/scout";
