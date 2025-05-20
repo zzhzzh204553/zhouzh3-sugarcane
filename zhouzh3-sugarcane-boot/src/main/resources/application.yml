@@ -13,7 +13,8 @@ spring:
         allow-bean-definition-overriding: true
     cloud:
         loadbalancer:
-            configurations: round-robin
+            cache:
+                enabled: false
 
 #feign:
 #    client:
