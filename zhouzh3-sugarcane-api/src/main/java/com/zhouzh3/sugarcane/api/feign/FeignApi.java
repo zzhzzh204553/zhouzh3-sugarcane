@@ -5,7 +5,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 
 
-@FeignClient(name = "zhouzh3-sugarcane")
+@FeignClient(name = "ZHOUZH3-SUGARCANE")
 public interface FeignApi {
 
     String PATH = "/api/scout";
