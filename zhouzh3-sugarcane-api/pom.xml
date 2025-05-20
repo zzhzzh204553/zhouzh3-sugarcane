@@ -25,9 +25,10 @@
         </dependency>
 
         <!--在Spring Cloud 2023.0.1（即Spring Cloud 2023.0.x版本）中，Feign默认不再集成Ribbon，而是使用Spring Cloud LoadBalancer作为负载均衡器。-->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-loadbalancer</artifactId>
-        </dependency>
+        <!--        如果api项目中存在直接依赖LoadBalancer的代码（如在配置类中使用@LoadBalanced修饰RestTemplate），则api项目需要显式添加该依赖以确保编译通过-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.springframework.cloud</groupId>-->
+        <!--            <artifactId>spring-cloud-starter-loadbalancer</artifactId>-->
+        <!--        </dependency>-->
     </dependencies>
 </project>
