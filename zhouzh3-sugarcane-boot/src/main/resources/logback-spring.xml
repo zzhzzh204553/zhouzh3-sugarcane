@@ -79,7 +79,8 @@
 
     <logger name="com.zhouzh3.sugarcane" level="DEBUG"/>
     <logger name="io.grpc.netty.shaded.io.netty.handler" level="DEBUG"/>
-    <logger name="com.netflix.discovery" level="info"/>
+    <logger name="com.netflix.eureka" level="DEBUG"/>
+    <logger name="com.netflix.discovery" level="DEBUG"/>
 
 
 </configuration>
