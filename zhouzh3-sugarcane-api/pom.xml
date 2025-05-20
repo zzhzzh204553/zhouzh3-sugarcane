@@ -10,11 +10,8 @@
     </parent>
 
     <artifactId>zhouzh3-sugarcane-api</artifactId>
-
     <properties>
-
     </properties>
-
 
     <dependencies>
         <dependency>
