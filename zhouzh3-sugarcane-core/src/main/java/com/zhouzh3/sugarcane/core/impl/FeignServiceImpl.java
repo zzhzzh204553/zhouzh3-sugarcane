@@ -1,8 +1,8 @@
-package com.zhouzh3.sugarcane.app.service.impl;
+package com.zhouzh3.sugarcane.core.impl;
 
 import com.zhouzh3.common.response.R;
 import com.zhouzh3.sugarcane.api.feign.ScoutApi;
-import com.zhouzh3.sugarcane.app.service.FeignService;
+import com.zhouzh3.sugarcane.core.FeignService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
 public class FeignServiceImpl implements FeignService {
 
     @Autowired
-    @Qualifier("zhouzh3-sugarcane.ScoutApi")  // Feign 代理的默认 Bean 名称
+//    @Qualifier("zhouzh3-sugarcane.ScoutApi")  // Feign 代理的默认 Bean 名称
     private ScoutApi scoutApi;
 
     @Override

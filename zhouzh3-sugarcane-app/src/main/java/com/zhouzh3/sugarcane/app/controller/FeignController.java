@@ -1,7 +1,7 @@
 package com.zhouzh3.sugarcane.app.controller;
 
 import com.zhouzh3.common.response.R;
-import com.zhouzh3.sugarcane.app.service.FeignService;
+import com.zhouzh3.sugarcane.core.FeignService;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;

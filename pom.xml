@@ -13,6 +13,7 @@
         <module>zhouzh3-sugarcane-boot</module>
         <module>zhouzh3-sugarcane-app</module>
         <module>zhouzh3-sugarcane-api</module>
+        <module>zhouzh3-sugarcane-core</module>
     </modules>
     <packaging>pom</packaging> <!-- 关键：父工程打包方式为 pom -->
 
@@ -105,12 +106,12 @@
             <dependency>
                 <groupId>com.zhouzh3</groupId>
                 <artifactId>zhouzh3-sugarcane-boot</artifactId>
-                <version>1.0.0-SNAPSHOT</version>
+                <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.zhouzh3</groupId>
                 <artifactId>zhouzh3-sugarcane-app</artifactId>
-                <version>1.0.0-SNAPSHOT</version>
+                <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.zhouzh3</groupId>
@@ -120,7 +121,7 @@
 
             <dependency>
                 <groupId>com.zhouzh3</groupId>
-                <artifactId>zhouzh3-bamboo-infra</artifactId>
+                <artifactId>zhouzh3-sugarcane-core</artifactId>
                 <version>${project.version}</version>
             </dependency>
 

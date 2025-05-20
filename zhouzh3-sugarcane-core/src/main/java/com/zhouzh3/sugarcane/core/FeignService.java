@@ -1,4 +1,4 @@
-package com.zhouzh3.sugarcane.app.service;
+package com.zhouzh3.sugarcane.core;
 
 import com.zhouzh3.common.response.R;
 

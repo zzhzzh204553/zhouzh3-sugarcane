@@ -7,6 +7,10 @@ spring:
             - optional:classpath:application-local.yml
     application:
         name: zhouzh3-sugarcane
+    profiles:
+        active: dev
+    main:
+        allow-bean-definition-overriding: true
     cloud:
         loadbalancer:
             configurations: round-robin
