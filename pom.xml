@@ -96,7 +96,8 @@
         <grpc.version>1.58.0</grpc.version>
 
         <eureka.version>4.2.1</eureka.version>
-        <eureka.client.jersey3.version>2.0.4</eureka.client.jersey3.version>
+        <xxl.job.version>3.1.0</xxl.job.version>
+
     </properties>
 
 
@@ -362,9 +363,9 @@
                 <version>${eureka.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.netflix.eureka</groupId>
-                <artifactId>eureka-client-jersey3</artifactId>
-                <version>${eureka.client.jersey3.version}</version>
+                <groupId>com.xuxueli</groupId>
+                <artifactId>xxl-job-core</artifactId>
+                <version>${xxl.job.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
